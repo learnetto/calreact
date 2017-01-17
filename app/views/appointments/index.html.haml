@@ -4,11 +4,10 @@
 
 %h3 Make a new appointment
 
-= form_for @appointment do |f|
+= form_for @appointment, remote: true do |f|
   = f.text_field :title
   = f.text_field :appt_time
   = f.submit 'Make appointment'
 
-- @appointments.each do |a|
-  %h3= a.title
-  %p= a.appt_time
+#appointments
+  = render 'appointments'
