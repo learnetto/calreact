@@ -14,7 +14,7 @@ Lessons list and links to code:
 
 2. Getting started with React in Rails
 
-  2.1. [Installation and setup of Rails 5 app with react-rails gem](https://github.com/learnetto/calreact/tree/lesson-3.1)
+  2.1. [Installation and setup of Rails 5 app with react-rails gem](https://github.com/learnetto/calreact/tree/lesson-2.1)
 
 3. Your first Rails app with React
 
