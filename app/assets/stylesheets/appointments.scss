@@ -10,3 +10,19 @@ body {
   line-height: 1.5;
   padding-bottom: 200px;
 }
+
+.submit-button {
+  background: #CC0000;
+  color: #FFFFFF;
+  cursor: pointer;
+  border: 0;
+  box-shadow:none;
+  border-radius: 0px;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.appointment {
+  padding-top: 10px;
+  border-bottom: solid 1px #ccc;
+}
