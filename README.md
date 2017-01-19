@@ -4,6 +4,8 @@ This is a simple calendar appointments app built as part of the [The Free React 
 
 It's a Ruby on Rails 5 app which uses React.js on the frontend.
 
+Demo app - [https://calreact.herokuapp.com/]()
+
 The code for each lesson in the course is tagged by module and lesson number in this repo. For example, lesson 2 under Module 3 is tagged lesson-3.2.
 
 Lessons list and links to code:
