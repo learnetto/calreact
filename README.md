@@ -8,7 +8,7 @@ Demo app - [https://calreact.herokuapp.com/](https://calreact.herokuapp.com/)
 
 The code for each lesson in the course is tagged by module and lesson number in this repo. For example, lesson 2 under Module 3 is tagged lesson-3.2.
 
-Lessons list and links to code:
+## Lessons list and links to code:
 
 1. Introduction to React
 
