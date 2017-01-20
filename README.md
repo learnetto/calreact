@@ -33,3 +33,15 @@ Lessons list and links to code:
   3.6. [Using a third-party React component - react-datetime](https://github.com/learnetto/calreact/tree/lesson-3.6)
 
   3.7. [Styling with CSS in React](https://github.com/learnetto/calreact/tree/lesson-3.7)
+
+  3.8. [Deploying a react-rails app to Heroku](https://github.com/learnetto/calreact/tree/lesson-3.8)
+
+4. ECMAScript 6 (ES6)
+
+  4.1. [Introduction to ES6 using the react-rails component generator](https://github.com/learnetto/calreact/tree/lesson-4.1-4.3)
+
+  4.2. [ES6 classes in React](https://github.com/learnetto/calreact/tree/lesson-4.1-4.3)
+
+  4.3. [ES6 Arrow functions in React](https://github.com/learnetto/calreact/tree/lesson-4.1-4.3)
+
+  4.4. [Stateless Functional Components in React](https://github.com/learnetto/calreact/tree/lesson-4.4)
