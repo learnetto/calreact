@@ -4,7 +4,7 @@ import AppointmentForm from './appointment_form';
 import { AppointmentsList } from './appointments_list';
 
 export default class Appointments extends React.Component {
-  constructor (props) {
+  constructor (props, railsContext) {
     super(props)
     this.state = {
       appointments: this.props.appointments,
