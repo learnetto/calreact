@@ -1,5 +1,7 @@
 import React from 'react';
 
+import AppointmentForm from './appointment_form';
+
 export default class Appointments extends React.Component {
   constructor (props) {
     super(props)
