@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calreact</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= env_javascript_include_tag(hot: ['http://localhost:3500/webpack-bundle.js']) %>
+		<%= env_javascript_include_tag(static: 'application_static',
+																		hot: 'application_non_webpack',
+																		'data-turbolinks-track' => true) %>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>

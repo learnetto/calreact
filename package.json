@@ -1,0 +1,14 @@
+{
+  "name": "react-webpack-rails-tutorial",
+  "version": "0.0.1",
+  "private": true,
+  "engines": {
+    "node": "6.9.0"
+  },
+  "scripts": {
+    "postinstall": "cd ./client && npm install",
+    "build:clean": "rm -r app/assets/webpack/* || true",
+    "build:dev:client": "(cd client && npm run build:dev:client --silent)",
+    "hot-assets": "(cd client && npm run hot-assets)"
+  }
+}
