@@ -22,6 +22,11 @@ body {
   padding: 10px;
 }
 
+.submit-button:disabled {
+  background: #bbb;
+  cursor: not-allowed;
+}
+
 .appointment {
   padding-top: 10px;
   border-bottom: solid 1px #ccc;
