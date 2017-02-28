@@ -2,7 +2,6 @@ import React from 'react';
 import AppointmentForm from './appointment_form';
 import { AppointmentsList } from './appointments_list';
 import update from 'immutability-helper';
-import { FormErrors } from './FormErrors';
 
 export default class Appointments extends React.Component {
   constructor (props, railsContext) {
@@ -20,21 +19,7 @@ export default class Appointments extends React.Component {
   }
 
   validateForm () {
-    // validations[fieldName].map - 
-    //check each validation. boom
-
-    let formValid = this.state.title.trim().length > 2 // && 
-                      // Object.prototype.toString.call(this.state.appt_time) === '[object Date]'
-
-    // let formErrors = this.state.formErrors;
-
-    // if (!formValid) {
-    //   formErrors = {}
-    // }
-
-    // console.log('validating in appointments.jsx');
-    // console.log({appt_time: this.state.appt_time});
-    this.setState({formValid: formValid});
+    this.setState({formValid: this.state.title.trim().length > 2})
   }
 
   handleFormSubmit () {
