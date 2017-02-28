@@ -11,12 +11,30 @@ export default class Appointments extends React.Component {
       appointments: this.props.appointments,
       title: 'Team standup meeting',
       appt_time: '',
-      formErrors: {}
+      formValid: true
     }
   }
 
   handleUserInput (obj) {
-    this.setState(obj);
+    this.setState(obj, this.validateForm);
+  }
+
+  validateForm () {
+    // validations[fieldName].map - 
+    //check each validation. boom
+
+    let formValid = this.state.title.trim().length > 2 // && 
+                      // Object.prototype.toString.call(this.state.appt_time) === '[object Date]'
+
+    // let formErrors = this.state.formErrors;
+
+    // if (!formValid) {
+    //   formErrors = {}
+    // }
+
+    // console.log('validating in appointments.jsx');
+    // console.log({appt_time: this.state.appt_time});
+    this.setState({formValid: formValid});
   }
 
   handleFormSubmit () {
@@ -48,9 +66,9 @@ export default class Appointments extends React.Component {
   render () {
     return (
       <div>
-        <FormErrors formErrors = {this.state.formErrors} />
         <AppointmentForm input_title={this.state.title}
           input_appt_time={this.state.appt_time}
+          formValid={this.state.formValid}
           onUserInput={(obj) => this.handleUserInput(obj)}
           onFormSubmit={() => this.handleFormSubmit()} />
         <AppointmentsList appointments={this.state.appointments} />
