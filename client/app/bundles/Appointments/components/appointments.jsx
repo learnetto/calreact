@@ -1,6 +1,6 @@
 import React from 'react';
-import AppointmentForm from './appointment_form';
-import { AppointmentsList } from './appointments_list';
+import AppointmentForm from './AppointmentForm';
+import { AppointmentsList } from './AppointmentsList';
 import update from 'immutability-helper';
 import { FormErrors } from './FormErrors';
 
