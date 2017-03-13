@@ -33,7 +33,7 @@ export default class AppointmentForm extends React.Component {
         <h2>Make a new appointment</h2>
         <form onSubmit={(event) => this.handleSubmit(event)}>
           <input name='title' placeholder='Appointment Title'
-            value={this.props.input_title}
+            value={this.props.title}
             onChange={(event) => this.handleChange(event)} />
 
           <Datetime input={false} open={true} inputProps={inputProps}

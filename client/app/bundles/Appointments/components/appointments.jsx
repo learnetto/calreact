@@ -54,8 +54,8 @@ export default class Appointments extends React.Component {
     return (
       <div>
         <FormErrors formErrors = {this.state.formErrors} />
-        <AppointmentForm input_title={this.state.title}
-          input_appt_time={this.state.appt_time}
+        <AppointmentForm title={this.state.title}
+          appt_time={this.state.appt_time}
           formValid = {this.state.formValid}
           onUserInput={(obj) => this.handleUserInput(obj)}
           onFormSubmit={() => this.handleFormSubmit()} />
