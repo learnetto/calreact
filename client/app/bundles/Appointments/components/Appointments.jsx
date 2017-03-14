@@ -3,16 +3,17 @@ import AppointmentForm from './AppointmentForm';
 import { AppointmentsList } from './AppointmentsList';
 import update from 'immutability-helper';
 import { FormErrors } from './FormErrors';
+import moment from 'moment';
 
 export default class Appointments extends React.Component {
   constructor (props, railsContext) {
     super(props)
     this.state = {
       appointments: this.props.appointments,
-      title: 'Team standup meeting',
+      title: '',
       appt_time: '',
       formErrors: {},
-      formValid: true
+      formValid: false
     }
   }
 
@@ -21,7 +22,9 @@ export default class Appointments extends React.Component {
   }
 
   validateForm () {
-    this.setState({formValid: this.state.title.trim().length > 2})
+    this.setState({formValid: this.state.title.trim().length > 2 &&
+                              moment(this.state.appt_time).isValid() &&
+                              moment(this.state.appt_time).isAfter()});
   }
 
   handleFormSubmit = () => {
