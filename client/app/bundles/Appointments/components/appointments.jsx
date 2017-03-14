@@ -16,7 +16,7 @@ export default class Appointments extends React.Component {
     }
   }
 
-  handleUserInput (obj) {
+  handleUserInput = (obj) => {
     this.setState(obj, this.validateForm);
   }
 
@@ -24,8 +24,9 @@ export default class Appointments extends React.Component {
     this.setState({formValid: this.state.title.trim().length > 2})
   }
 
-  handleFormSubmit () {
-    const appointment = {title: this.state.title, appt_time: this.state.appt_time};
+  handleFormSubmit = () => {
+    const appointment = {title: this.state.title,
+                         appt_time: this.state.appt_time};
     $.post('/appointments',
             {appointment: appointment})
           .done((data) => {
@@ -42,7 +43,8 @@ export default class Appointments extends React.Component {
   }
 
   addNewAppointment (appointment) {
-    const appointments = update(this.state.appointments, { $push: [appointment]});
+    const appointments = update(this.state.appointments,
+                                { $push: [appointment]});
     this.setState({
       appointments: appointments.sort(function(a,b){
         return new Date(a.appt_time) - new Date(b.appt_time);
@@ -57,8 +59,8 @@ export default class Appointments extends React.Component {
         <AppointmentForm title={this.state.title}
           appt_time={this.state.appt_time}
           formValid = {this.state.formValid}
-          onUserInput={(obj) => this.handleUserInput(obj)}
-          onFormSubmit={() => this.handleFormSubmit()} />
+          onUserInput={this.handleUserInput}
+          onFormSubmit={this.handleFormSubmit} />
         <AppointmentsList appointments={this.state.appointments} />
       </div>
     )
