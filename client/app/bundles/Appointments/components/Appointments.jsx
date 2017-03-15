@@ -54,8 +54,8 @@ export default class Appointments extends React.Component {
   }
 
   handleFormSubmit = () => {
-    const appointment = {title: this.state.title,
-                         appt_time: this.state.appt_time};
+    const appointment = {title: this.state.title.value,
+                         appt_time: this.state.appt_time.value};
     $.post('/appointments',
             {appointment: appointment})
           .done((data) => {
