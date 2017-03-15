@@ -15,7 +15,7 @@ export default class Appointments extends React.Component {
     this.state = {
       appointments: this.props.appointments,
       title: {value: '', valid: false},
-      appt_time: {value: '', valid: false},
+      appt_time: {value: new Date(), valid: false},
       formErrors: {},
       formValid: false
     }
