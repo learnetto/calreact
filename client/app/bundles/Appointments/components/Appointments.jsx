@@ -10,21 +10,47 @@ export default class Appointments extends React.Component {
     super(props)
     this.state = {
       appointments: this.props.appointments,
-      title: '',
-      appt_time: '',
+      title: {value: '', valid: false},
+      appt_time: {value: '', valid: false},
       formErrors: {},
       formValid: false
     }
   }
 
-  handleUserInput = (obj) => {
-    this.setState(obj, this.validateForm);
+  handleUserInput = (fieldName, fieldValue, validations) => {
+    const newFieldState = update(this.state[fieldName],
+                                  {value: {$set: fieldValue}});
+    this.setState({[fieldName]: newFieldState},
+                  () => { this.validateField(fieldName, fieldValue, validations) });
+  }
+
+  validateField (fieldName, fieldValue, validations) {
+    let fieldValid;
+
+    let fieldErrors = validations.reduce((errors, v) => {
+      let e = v(fieldValue);
+      if(e !== '') {
+        errors.push(e);
+      }
+      return(errors);
+    }, []);
+
+    fieldValid = fieldErrors.length === 0;
+
+    const newFieldState = update(this.state[fieldName],
+                                  {valid: {$set: fieldValid}});
+
+    const newFormErrors = update(this.state.formErrors,
+                                  {$merge: {[fieldName]: fieldErrors}});
+
+    this.setState({[fieldName]: newFieldState,
+                    formErrors: newFormErrors}, this.validateForm);
   }
 
   validateForm () {
-    this.setState({formValid: this.state.title.trim().length > 2 &&
-                              moment(this.state.appt_time).isValid() &&
-                              moment(this.state.appt_time).isAfter()});
+    this.setState({formValid: this.state.title.valid &&
+                              this.state.appt_time.valid
+                  });
   }
 
   handleFormSubmit = () => {
