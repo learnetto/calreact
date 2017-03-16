@@ -26,7 +26,7 @@ export default class Appointment extends React.Component {
         dataType: "JSON"
       }).done((data) => {
         this.setState({appointment: data});
-      });     
+      });
     }
   }
 

@@ -10,6 +10,10 @@ export default class Appointments extends React.Component {
     appointments: PropTypes.array.isRequired
   }
 
+  static defaultProps = {
+    appointments: []
+  }
+
   constructor (props, railsContext) {
     super(props)
     this.state = {
@@ -18,6 +22,18 @@ export default class Appointments extends React.Component {
       appt_time: {value: new Date(), valid: false},
       formErrors: {},
       formValid: false
+    }
+  }
+
+  componentDidMount () {
+    if(this.props.match) {
+      $.ajax({
+        type: "GET",
+        url: '/appointments',
+        dataType: "JSON"
+      }).done((data) => {
+        this.setState({appointments: data});
+      });
     }
   }
 
