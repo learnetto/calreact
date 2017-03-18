@@ -10,7 +10,10 @@ class AppointmentsController < ApplicationController
 
   def show
     @appointment = Appointment.find(params[:id])
-    render json: @appointment
+    respond_to do |format|
+      format.html { render :index }
+      format.json { render json: @appointment }
+    end
   end
 
   def edit
