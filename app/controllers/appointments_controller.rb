@@ -2,18 +2,12 @@ class AppointmentsController < ApplicationController
   def index
     @appointments = Appointment.order('appt_time ASC')
     @appointment = Appointment.new
-    respond_to do |format|
-      format.html
-      format.json { render json: @appointments }
-    end
+    render json: @appointments
   end
 
   def show
     @appointment = Appointment.find(params[:id])
-    respond_to do |format|
-      format.html { render :index }
-      format.json { render json: @appointment }
-    end
+    render json: @appointment
   end
 
   def edit
