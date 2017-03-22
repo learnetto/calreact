@@ -59,3 +59,5 @@ gem 'haml'
 
 gem 'rack-cors', :require => 'rack/cors'
 
+gem 'devise_token_auth'
+gem 'omniauth'

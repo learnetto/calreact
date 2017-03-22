@@ -5,6 +5,8 @@ class Appointment < ApplicationRecord
 
 	validate :appt_time_cannot_be_in_the_past
 
+	belongs_to :user
+
 	private
 	def appt_time_cannot_be_in_the_past
 		if appt_time.present? && appt_time < Time.now

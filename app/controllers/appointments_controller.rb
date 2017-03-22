@@ -1,12 +1,14 @@
 class AppointmentsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
-    @appointments = Appointment.order('appt_time ASC')
-    @appointment = Appointment.new
+    @appointments = current_user.appointments.order('appt_time ASC')
+    @appointment = current_user.appointments.new
     render json: @appointments
   end
 
   def show
-    @appointment = Appointment.find(params[:id])
+    @appointment = current_user.appointments.find(params[:id])
     render json: @appointment
   end
 
@@ -15,7 +17,7 @@ class AppointmentsController < ApplicationController
   end
 
   def update
-    @appointment = Appointment.find(params[:id])
+    @appointment = current_user.appointments.find(params[:id])
     if @appointment.update(appointment_params)
       render json: @appointment
     else
@@ -24,7 +26,7 @@ class AppointmentsController < ApplicationController
   end
 
   def create
-    @appointment = Appointment.new(appointment_params)
+    @appointment = current_user.appointments.new(appointment_params)
     if @appointment.save
       render json: @appointment
     else
@@ -33,7 +35,7 @@ class AppointmentsController < ApplicationController
   end
 
   def destroy
-    @appointment = Appointment.find(params[:id])
+    @appointment = current_user.appointments.find(params[:id])
     if @appointment.destroy
       head :no_content, status: :ok
     else
