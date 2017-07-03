@@ -45,3 +45,5 @@ The code for each lesson in the course is tagged by module and lesson number in 
   4.3. [ES6 Arrow functions in React](https://github.com/learnetto/calreact/tree/lesson-4.1-4.3)
 
   4.4. [Stateless Functional Components in React](https://github.com/learnetto/calreact/tree/lesson-4.4)
+
+  4.5. [How to use React with the webpacker gem and Rails 5.1](https://github.com/learnetto/calreact/tree/lesson-4.5)
