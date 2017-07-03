@@ -1,4 +1,10 @@
-class Appointments extends React.Component {
+import React from 'react'
+import ReactDOM from 'react-dom'
+import AppointmentForm from './appointment_form'
+import { AppointmentsList } from './appointments_list'
+import update from 'immutability-helper'
+
+export default class Appointments extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -22,7 +28,7 @@ class Appointments extends React.Component {
   }
 
   addNewAppointment (appointment) {
-    const appointments = React.addons.update(this.state.appointments, { $push: [appointment]});
+    const appointments = update(this.state.appointments, { $push: [appointment]});
     this.setState({
       appointments: appointments.sort(function(a,b){
         return new Date(a.appt_time) - new Date(b.appt_time);
@@ -42,3 +48,13 @@ class Appointments extends React.Component {
     )
   }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  const node = document.getElementById('appointments_data')
+  const data = JSON.parse(node.getAttribute('data'))
+
+  ReactDOM.render(
+    <Appointments appointments={data} />,
+    document.body.appendChild(document.createElement('div')),
+  )
+})
