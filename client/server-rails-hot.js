@@ -36,6 +36,7 @@ const devServer = new WebpackDevServer(compiler, {
     chunks: false,
     children: false,
   },
+  headers: { "Access-Control-Allow-Origin": "http://localhost:5000" },
 });
 
 devServer.listen(hotRailsPort, 'localhost', err => {
