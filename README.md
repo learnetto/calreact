@@ -80,9 +80,9 @@ Demo app - [https://calreact.herokuapp.com/](https://calreact.herokuapp.com/)
 
 #### Frontend:
 
-[Lessons 1 and 2 - Setting up Create React App and porting components from rils](https://github.com/https://github.com/learnetto/calreact-frontend/tree/m9l2-port-components)
+[Lessons 1 and 2 - Setting up Create React App and porting components from Rails](https://github.com/learnetto/calreact-frontend/tree/m9l2-port-components)
 
-[Lesson 3 - API User authentication with devise_token_auth](learnetto/contend/tree/m9l3-login)
+[Lesson 3 - API User authentication with devise_token_auth](https://github.com/learnetto/contend/tree/m9l3-login)
 
 [Lesson 4 - Displaying session data and signing out](https://github.com/learnetto/calreact-frontend/tree/m9l4-sign-out)
 
